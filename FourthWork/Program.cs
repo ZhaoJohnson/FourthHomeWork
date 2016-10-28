@@ -6,10 +6,18 @@ using System.Threading.Tasks;
 
 namespace FourthWork
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
+            try
+            {
+                Menu.StarMenu();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }
