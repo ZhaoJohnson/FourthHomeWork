@@ -1,4 +1,5 @@
-﻿using FourthInterface;
+﻿using FourthCooking;
+using FourthInterface;
 using FourthModel.BusinessModel;
 using System;
 using System.Collections.Generic;
@@ -8,21 +9,29 @@ using System.Threading.Tasks;
 
 namespace FourthService
 {
-    public class CustomerService<TCustomerModel> : ICustomer, ICooking, IOrder
-        where TCustomerModel : Customer
+    public class CustomerService : ICustomer, ICooking, IOrder
+
     {
-        public void Cooking()
+        public void Cooking(int i)
         {
+            CookService cook = new CookService();
+            switch (i)
+            {
+                default:
+                    break;
+            }
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
         }
 
         public void Order()
         {
-            throw new NotImplementedException();
+        }
+
+        private void eat()
+        {
         }
     }
 }

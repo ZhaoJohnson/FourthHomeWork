@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FourthInterface
+namespace FourthModel.Enum
 {
-    public interface ICooking
+    public enum FoodType
     {
-        void Cooking(int i);
+        GuangdongCuisine = 1,
+        HunanCuisine = 2,
+        SichuanCuisine = 3
     }
 }

@@ -44,6 +44,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FourthCooking\FourthCooking.csproj">
+      <Project>{BEE2BB41-A6E3-40A1-96E5-6248D1C09525}</Project>
+      <Name>FourthCooking</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FourthInterface\FourthInterface.csproj">
       <Project>{D6C36830-C128-4B11-A0BD-69EEFC65C5ED}</Project>
       <Name>FourthInterface</Name>

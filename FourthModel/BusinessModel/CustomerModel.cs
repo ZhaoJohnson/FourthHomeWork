@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FourthModel.BusinessModel
 {
-    public class Customer
+    public class CustomerModel
     {
         public Person MyPerson { get; set; }
 

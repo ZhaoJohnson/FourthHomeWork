@@ -40,10 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BasicModel\Food.cs" />
-    <Compile Include="BasicModel\Person.cs" />
-    <Compile Include="BusinessModel\Customer.cs" />
-    <Compile Include="BusinessModel\FoodCooking.cs" />
+    <Compile Include="BasicModel\FoodModel.cs" />
+    <Compile Include="BasicModel\PersonModel.cs" />
+    <Compile Include="BusinessModel\CustomerModel.cs" />
+    <Compile Include="BusinessModel\FoodCuisineModel.cs" />
+    <Compile Include="Enum\FoodType.cs" />
+    <Compile Include="FoodModel\GuangdongCuisineModel.cs" />
+    <Compile Include="FoodModel\HunanCuisineModel.cs" />
+    <Compile Include="FoodModel\SichuanCuisineModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

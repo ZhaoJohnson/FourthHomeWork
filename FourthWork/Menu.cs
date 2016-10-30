@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FourthModel.BusinessModel;
+using FourthService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,6 +35,8 @@ namespace FourthWork
                 switch (type)
                 {
                     case 1:
+                        //CustomerModel
+                        CustomerService<CustomerModel> cs = new CustomerService<CustomerModel>();
                         Console.WriteLine("学习做菜");
                         break;
 
