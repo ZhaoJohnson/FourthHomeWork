@@ -43,6 +43,7 @@
     <Compile Include="BasicModel\FoodModel.cs" />
     <Compile Include="BasicModel\PersonModel.cs" />
     <Compile Include="BusinessModel\CustomerModel.cs" />
+    <Compile Include="CuisineModel\BasicCuisine.cs" />
     <Compile Include="Enum\FoodType.cs" />
     <Compile Include="CuisineModel\GuangdongCuisineModel.cs" />
     <Compile Include="CuisineModel\HunanCuisineModel.cs" />

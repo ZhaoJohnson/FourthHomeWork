@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FourthModel.CuisineModel;
+using FourthModel.FoodModel;
 
 namespace FourthCooking
 {
@@ -29,7 +30,7 @@ namespace FourthCooking
                 case FoodType.GuangdongCuisine:
                     result = () =>
                     {
-                        Console.WriteLine();
+                        showList<GuangdongCuisineModel>();
                     };
                     break;
 
@@ -54,6 +55,16 @@ namespace FourthCooking
                     break;
             }
             return result;
+        }
+
+        private void showList<TData>()
+            where TData: BasicCuisine,new ()
+        {
+            TData date=new TData();
+            foreach (var item in date.privateCuisine.Values)
+            {
+                Console.WriteLine($"编号:{item.FoodId}：菜名{item.FoodName}");
+            }
         }
     }
 }
