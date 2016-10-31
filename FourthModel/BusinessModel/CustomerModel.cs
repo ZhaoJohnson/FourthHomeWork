@@ -11,11 +11,13 @@ namespace FourthModel.BusinessModel
     {
         public Person MyPerson { get; set; }
 
-        public event Mytest PersonDoing;
+        public event Action PersonDoing;
 
-        public delegate Action Mytest();
+        //public delegate Action Dosomething();
 
-        
-        
+        public void WorkMyJobs()
+        {
+            PersonDoing();
+        }
     }
 }

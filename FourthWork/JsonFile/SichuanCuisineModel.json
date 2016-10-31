@@ -1,0 +1,18 @@
+{
+  "1": {
+    "FoodId": 1,
+    "FoodName": "name",
+    "FoodValue": 99.0,
+    "FoodInfo": "info",
+    "FoodFormula": "Formula",
+    "FoodCooking": "cook"
+  },
+  "2": {
+    "FoodId": 2,
+    "FoodName": "name2",
+    "FoodValue": 88.0,
+    "FoodInfo": "info2",
+    "FoodFormula": "Formula2",
+    "FoodCooking": "cook2"
+  }
+}

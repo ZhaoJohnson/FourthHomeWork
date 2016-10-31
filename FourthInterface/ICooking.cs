@@ -8,6 +8,6 @@ namespace FourthInterface
 {
     public interface ICooking
     {
-        void Cooking(int i);
+        List<Action> Cooking();
     }
 }

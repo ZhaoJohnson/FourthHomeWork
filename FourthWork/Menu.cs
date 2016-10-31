@@ -1,4 +1,6 @@
-﻿using FourthModel.BusinessModel;
+﻿using FourthCooking;
+using FourthModel.BusinessModel;
+using FourthModel.Enum;
 using FourthService;
 using System;
 using System.Collections.Generic;
@@ -7,8 +9,6 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using FourthCooking;
-using FourthModel.Enum;
 
 namespace FourthWork
 {
@@ -38,14 +38,14 @@ namespace FourthWork
                 switch (type)
                 {
                     case 1:
-                        CustomerModel customer=new CustomerModel();
-                        
-                        
-                        customer.PersonDoing += Customer_PersonDoing2;
-                        
-                        CookService cookService=new CookService();
-                        CustomerModel.Mytest mt = () => cookService.GeneralCooking(FoodType.HunanCuisine);
-                        mt.Invoke();
+                        CustomerModel customer = new CustomerModel();
+                        CustomerService cService = new CustomerService();
+                        var cookAction = cService.Cooking();
+                        foreach (Action item in cookAction)
+                        {
+                            customer.PersonDoing += item;
+                        }
+                        customer.WorkMyJobs();
                         Console.WriteLine("学习做菜");
                         break;
 
@@ -72,11 +72,6 @@ namespace FourthWork
                         break;
                 }
             } while (true);
-        }
-
-        private static Action Customer_PersonDoing2()
-        {
-            throw new NotImplementedException();
         }
 
         private static int IsMenu(string str)

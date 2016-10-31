@@ -10,16 +10,36 @@ using System.Threading.Tasks;
 namespace FourthService
 {
     public class CustomerService : ICustomer, ICooking, IOrder
-
     {
-        public void Cooking(int i)
+        private static bool isCook = true;
+
+        public List<Action> Cooking()
         {
             CookService cook = new CookService();
-            switch (i)
+            List<Action> listResult = new List<Action>();
+            do
             {
-                default:
-                    break;
-            }
+                Console.WriteLine("请选择1：粤菜");
+                Console.WriteLine("请选择2：湘菜");
+                Console.WriteLine("请选择3：川菜");
+                Console.WriteLine("请选择0：退出");
+                string stri = Console.ReadLine();
+                int i;
+                if (int.TryParse(stri, out i))
+                {
+                    switch (i)
+                    {
+                        case 1:
+                            listResult = cook.GeneralCooking(FourthModel.Enum.FoodType.GuangdongCuisine);
+                            break;
+
+                        case 0:
+                            isCook = false;
+                            break;
+                    }
+                }
+            } while (isCook);
+            return listResult;
         }
 
         public void Dispose()
