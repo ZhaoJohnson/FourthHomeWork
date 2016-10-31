@@ -1,10 +1,10 @@
 ﻿using FourthModel.Enum;
-using FourthModel.FoodModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FourthModel.CuisineModel;
 
 namespace FourthCooking
 {
@@ -30,7 +30,6 @@ namespace FourthCooking
                     result = () =>
                     {
                         Console.WriteLine();
-                        GuangdongCuisineModel gdCuisine = new GuangdongCuisineModel();
                     };
                     break;
 

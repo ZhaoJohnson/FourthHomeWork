@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FourthModel.BasicModel
 {
-    public class FoodModel
+    public sealed class FoodModel
     {
         /// <summary>
         /// 菜品Id

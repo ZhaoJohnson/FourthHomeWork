@@ -43,14 +43,17 @@
     <Compile Include="BasicModel\FoodModel.cs" />
     <Compile Include="BasicModel\PersonModel.cs" />
     <Compile Include="BusinessModel\CustomerModel.cs" />
-    <Compile Include="BusinessModel\FoodCuisineModel.cs" />
     <Compile Include="Enum\FoodType.cs" />
-    <Compile Include="FoodModel\GuangdongCuisineModel.cs" />
-    <Compile Include="FoodModel\HunanCuisineModel.cs" />
-    <Compile Include="FoodModel\SichuanCuisineModel.cs" />
+    <Compile Include="CuisineModel\GuangdongCuisineModel.cs" />
+    <Compile Include="CuisineModel\HunanCuisineModel.cs" />
+    <Compile Include="CuisineModel\SichuanCuisineModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FourthCommon\FourthCommon.csproj">
+      <Project>{8199252b-014f-4d97-b9f3-75a4adbb2644}</Project>
+      <Name>FourthCommon</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FourthInterface\FourthInterface.csproj">
       <Project>{D6C36830-C128-4B11-A0BD-69EEFC65C5ED}</Project>
       <Name>FourthInterface</Name>

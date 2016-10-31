@@ -3,9 +3,12 @@ using FourthService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using FourthCooking;
+using FourthModel.Enum;
 
 namespace FourthWork
 {
@@ -35,8 +38,14 @@ namespace FourthWork
                 switch (type)
                 {
                     case 1:
-                        //CustomerModel
-                        CustomerService<CustomerModel> cs = new CustomerService<CustomerModel>();
+                        CustomerModel customer=new CustomerModel();
+                        
+                        
+                        customer.PersonDoing += Customer_PersonDoing2;
+                        
+                        CookService cookService=new CookService();
+                        CustomerModel.Mytest mt = () => cookService.GeneralCooking(FoodType.HunanCuisine);
+                        mt.Invoke();
                         Console.WriteLine("学习做菜");
                         break;
 
@@ -63,6 +72,11 @@ namespace FourthWork
                         break;
                 }
             } while (true);
+        }
+
+        private static Action Customer_PersonDoing2()
+        {
+            throw new NotImplementedException();
         }
 
         private static int IsMenu(string str)
