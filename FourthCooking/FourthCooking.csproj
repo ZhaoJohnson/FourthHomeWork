@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,10 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CookingFactory.cs" />
     <Compile Include="CookService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FourthCommon\FourthCommon.csproj">
+      <Project>{8199252b-014f-4d97-b9f3-75a4adbb2644}</Project>
+      <Name>FourthCommon</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FourthInterface\FourthInterface.csproj">
       <Project>{D6C36830-C128-4B11-A0BD-69EEFC65C5ED}</Project>
       <Name>FourthInterface</Name>

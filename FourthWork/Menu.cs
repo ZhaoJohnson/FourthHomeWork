@@ -46,7 +46,8 @@ namespace FourthWork
                             customer.PersonDoing += item;
                         }
                         customer.WorkMyJobs();
-                        Console.WriteLine("学习做菜");
+                        Console.WriteLine("学习做菜完毕");
+                        Console.Clear();
                         break;
 
                     case 2:

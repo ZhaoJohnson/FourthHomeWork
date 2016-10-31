@@ -48,6 +48,7 @@
     <Compile Include="CuisineModel\GuangdongCuisineModel.cs" />
     <Compile Include="CuisineModel\HunanCuisineModel.cs" />
     <Compile Include="CuisineModel\SichuanCuisineModel.cs" />
+    <Compile Include="PersonSetting.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

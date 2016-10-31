@@ -69,6 +69,51 @@ namespace FourthCooking
             return listresult;
         }
 
+        public List<Action> FactoryCooking(FoodType foodType)
+        {
+            List<Action> listresult = new List<Action>();
+            Action result;
+            switch (foodType)
+            {
+                case FoodType.GuangdongCuisine:
+                    do
+                    {
+                        showList<GuangdongCuisineModel>();
+                        string intX = Console.ReadLine();
+                        int intY;
+                        if (int.TryParse(intX, out intY))
+                        {
+                            listresult.Add(choiceCuisine<GuangdongCuisineModel>(intY));
+                            Console.WriteLine("选择成功");
+                        }
+                        if (intX.ToUpper() == "OK")
+                        {
+                            IsChoice = false;
+                        }
+                    } while (IsChoice);
+                    break;
+
+                case FoodType.HunanCuisine:
+                    result = () =>
+                    {
+                        showList<HunanCuisineModel>();
+                    };
+                    break;
+
+                case FoodType.SichuanCuisine:
+                    result = () =>
+                    {
+                        showList<SichuanCuisineModel>();
+                    };
+                    break;
+
+                default:
+                    result = null;
+                    break;
+            }
+            return listresult;
+        }
+
         private void showList<TData>()
             where TData : BasicCuisine, new()
         {
@@ -82,6 +127,7 @@ namespace FourthCooking
                 Console.WriteLine($"菜品价格:￥{item.FoodValue}");
                 Console.WriteLine("****************************************");
             }
+            Console.WriteLine("选择完毕请输入：OK");
         }
 
         private Action choiceCuisine<TData>(int id)
@@ -89,6 +135,19 @@ namespace FourthCooking
         {
             TData data = new TData();
             var item = data.privateCuisine[id];
+            return () =>
+            {
+                Console.WriteLine("****************************************");
+                Console.WriteLine($"{item.FoodName}菜品制作:{item.FoodCooking}");
+                Console.WriteLine("****************************************");
+            };
+        }
+
+        private Action choiceFactory<TData>(int id)
+              where TData : BasicCuisine, new()
+        {
+            BasicCuisine basic = new TData();
+            var item = basic.privateCuisine[id];
             return () =>
             {
                 Console.WriteLine("****************************************");

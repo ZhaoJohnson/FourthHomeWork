@@ -76,7 +76,7 @@ namespace FourthCommon
 
         public static bool Serializer<T>(T t, string XmlFilename)
         {
-            string path = Path.Combine(TheBasePath, XmlFilename);
+            string path = Path.Combine(TheBasePath, XmlFilename + ".XML");
             FileStream xmlfile = new FileStream(path, FileMode.OpenOrCreate);
 
             //创建序列化对象

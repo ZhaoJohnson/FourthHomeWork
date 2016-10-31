@@ -1,4 +1,5 @@
 ﻿using FourthCommon;
+using FourthModel;
 using FourthModel.BasicModel;
 using FourthModel.BusinessModel;
 using System;
@@ -13,29 +14,16 @@ namespace FourthWork
     {
         private static void Main(string[] args)
         {
-            //try
-            //{
-            //    Dictionary<int, FoodModel> foodDictionary = new Dictionary<int, FoodModel>();
-            //    foodDictionary.Add(1, new FoodModel()
-            //    {
-            //        FoodId = 1,
-            //        FoodName = "name",
-            //        FoodCooking = "cook",
-            //        FoodFormula = "Formula",
-            //        FoodInfo = "info",
-            //        FoodValue = 99
-            //    });
-            //    foodDictionary.Add(2, new FoodModel()
-            //    {
-            //        FoodId = 2,
-            //        FoodName = "name2",
-            //        FoodCooking = "cook2",
-            //        FoodFormula = "Formula2",
-            //        FoodInfo = "info2",
-            //        FoodValue = 88
-            //    });
-            //    MyJsonHelper.Object2JsonFile(foodDictionary);
+            try
+            {
+                SettingModel smodel = new SettingModel()
+                {
+                    Name = "demon",
+                    Cuisine = "Guangdong",
+                    ChoiceFood = new int[] { 1, 2 }
+                };
 
+                MyXmlHelper.Serializer(smodel, "SettingModel");
                 Menu.StarMenu();
             }
             catch (Exception)
