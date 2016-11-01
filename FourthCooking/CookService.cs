@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FourthCookingFactory;
+using FourthModel.BasicModel;
 
 namespace FourthCooking
 {
@@ -71,47 +73,27 @@ namespace FourthCooking
 
         public List<Action> FactoryCooking(FoodType foodType)
         {
-            List<Action> listresult = new List<Action>();
-            Action result;
+            IBasicCookFactory cookFactory;
             switch (foodType)
             {
                 case FoodType.GuangdongCuisine:
-                    do
-                    {
-                        showList<GuangdongCuisineModel>();
-                        string intX = Console.ReadLine();
-                        int intY;
-                        if (int.TryParse(intX, out intY))
-                        {
-                            listresult.Add(choiceCuisine<GuangdongCuisineModel>(intY));
-                            Console.WriteLine("选择成功");
-                        }
-                        if (intX.ToUpper() == "OK")
-                        {
-                            IsChoice = false;
-                        }
-                    } while (IsChoice);
+                    cookFactory = new ThirdVictoryCuisine();
                     break;
 
                 case FoodType.HunanCuisine:
-                    result = () =>
-                    {
-                        showList<HunanCuisineModel>();
-                    };
+                    cookFactory = new FireTempleCuisine();
                     break;
 
                 case FoodType.SichuanCuisine:
-                    result = () =>
-                    {
-                        showList<SichuanCuisineModel>();
-                    };
+                    cookFactory = new HideGardenCuisine();
                     break;
-
                 default:
-                    result = null;
+                    cookFactory = null;
                     break;
             }
-            return listresult;
+            if (cookFactory == null) throw new Exception("找不到厨房");
+            BasicCuisine cuisine = cookFactory.CreatedCuisine();
+            return LoadFoodAction(cuisine);
         }
 
         private void showList<TData>()
@@ -155,5 +137,20 @@ namespace FourthCooking
                 Console.WriteLine("****************************************");
             };
         }
+
+        private List<Action> LoadFoodAction(BasicCuisine basicCuisine)
+        {
+            List<Action> resultList = new List<Action>();
+            foreach (var pair in basicCuisine.privateCuisine.Values)
+            {
+                resultList.Add(() =>
+                {
+                    Console.WriteLine($"客人点的{pair.FoodName}已经被做好了");
+                });
+            }
+
+            return resultList;
+        }
+
     }
 }

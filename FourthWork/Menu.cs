@@ -22,7 +22,8 @@ namespace FourthWork
         public static void StarMenu()
         {
             Console.WriteLine("程序进行加载中请稍后………………………………");
-
+                        CustomerService cService = new CustomerService();
+                        
             do
             {
                 Console.WriteLine("欢迎使用xx系统");
@@ -38,24 +39,43 @@ namespace FourthWork
                 switch (type)
                 {
                     case 1:
-                        CustomerModel customer = new CustomerModel();
-                        CustomerService cService = new CustomerService();
                         var cookAction = cService.Cooking();
+                        CustomerModel customer = new CustomerModel();
                         foreach (Action item in cookAction)
                         {
                             customer.PersonDoing += item;
                         }
                         customer.WorkMyJobs();
                         Console.WriteLine("学习做菜完毕");
+                        Console.ReadKey();
                         Console.Clear();
                         break;
 
                     case 2:
                         Console.WriteLine("简单工厂实现客人点菜");
+                        CustomerModel customerOrder = new CustomerModel();
+                        foreach (Action item in cService.Order())
+                        {
+                            customerOrder.PersonDoing += item;
+                        }
+                        customerOrder.WorkMyJobs();
+                        Console.WriteLine("简单工厂点菜完毕");
+                        Console.ReadKey();
+                        Console.Clear();
                         break;
 
                     case 3:
                         Console.WriteLine("工厂方法实现客人点菜");
+                        Console.WriteLine("工厂实现客人点菜");
+                        CustomerModel customerFactory = new CustomerModel();
+                        foreach (Action item in cService.FactoryOrder())
+                        {
+                            customerFactory.PersonDoing += item;
+                        }
+                        customerFactory.WorkMyJobs();
+                        Console.WriteLine("工厂点菜完毕");
+                        Console.ReadKey();
+                        Console.Clear();
                         break;
 
                     case 4:

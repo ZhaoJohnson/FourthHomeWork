@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{44A39DE6-839D-40EF-A966-FD0490CD65B2}</ProjectGuid>
+    <ProjectGuid>{402EF276-2BCC-4771-9837-2A965F0E0C1B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FourthService</RootNamespace>
-    <AssemblyName>FourthService</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <RootNamespace>FourthCookingFactory</RootNamespace>
+    <AssemblyName>FourthCookingFactory</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -40,24 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomerService.cs" />
+    <Compile Include="FireTempleCuisine.cs" />
+    <Compile Include="HideGardenCuisine.cs" />
+    <Compile Include="IBasicCookFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThirdVictoryCuisine.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FourthCommon\FourthCommon.csproj">
-      <Project>{8199252b-014f-4d97-b9f3-75a4adbb2644}</Project>
-      <Name>FourthCommon</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FourthCooking\FourthCooking.csproj">
-      <Project>{BEE2BB41-A6E3-40A1-96E5-6248D1C09525}</Project>
-      <Name>FourthCooking</Name>
-    </ProjectReference>
     <ProjectReference Include="..\FourthInterface\FourthInterface.csproj">
-      <Project>{D6C36830-C128-4B11-A0BD-69EEFC65C5ED}</Project>
+      <Project>{d6c36830-c128-4b11-a0bd-69eefc65c5ed}</Project>
       <Name>FourthInterface</Name>
     </ProjectReference>
     <ProjectReference Include="..\FourthModel\FourthModel.csproj">
-      <Project>{3A2D6B63-A589-440A-B45D-9C01FCC311ED}</Project>
+      <Project>{3a2d6b63-a589-440a-b45d-9c01fcc311ed}</Project>
       <Name>FourthModel</Name>
     </ProjectReference>
   </ItemGroup>

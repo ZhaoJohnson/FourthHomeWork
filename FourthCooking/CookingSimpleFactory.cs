@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace FourthCooking
 {
-    public class CookingFactory
+    public class CookingSimpleFactory
     {
         public static BasicCuisine EnumCookingFood(FoodType foodType)
         {
@@ -34,11 +34,11 @@ namespace FourthCooking
             }
         }
 
-        public static BasicCuisine ConfigCookingFood(string setting)
+        public static BasicCuisine ConfigCookingFood(SettingModel setting)
         {
-            var mysetting = MyXmlHelper.DeserializeXMLFileToObject<SettingModel>(setting, "XmlSetting");
-            string objectName = mysetting.Cuisine + "CuisineModel";
-            Assembly assembly = Assembly.Load(mysetting.Name);
+            //var mysetting = MyXmlHelper.DeserializeXMLFileToObject<SettingModel>(setting, "XmlSetting");
+            string objectName = setting.Cuisine + "CuisineModel";
+            Assembly assembly = Assembly.Load(setting.Name);
             var cust = assembly.GetExportedTypes().First(p => p.Name == objectName);
             if(cust==null)throw new Exception("无法找到对应菜系");
             return (BasicCuisine)Activator.CreateInstance(cust);
