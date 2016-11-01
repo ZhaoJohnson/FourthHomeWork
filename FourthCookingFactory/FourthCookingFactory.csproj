@@ -46,16 +46,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThirdVictoryCuisine.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\FourthInterface\FourthInterface.csproj">
-      <Project>{d6c36830-c128-4b11-a0bd-69eefc65c5ed}</Project>
-      <Name>FourthInterface</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FourthModel\FourthModel.csproj">
-      <Project>{3a2d6b63-a589-440a-b45d-9c01fcc311ed}</Project>
-      <Name>FourthModel</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

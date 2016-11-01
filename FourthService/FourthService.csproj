@@ -48,6 +48,10 @@
       <Project>{8199252b-014f-4d97-b9f3-75a4adbb2644}</Project>
       <Name>FourthCommon</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FourthCookingFactory\FourthCookingFactory.csproj">
+      <Project>{402ef276-2bcc-4771-9837-2a965f0e0c1b}</Project>
+      <Name>FourthCookingFactory</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FourthCooking\FourthCooking.csproj">
       <Project>{BEE2BB41-A6E3-40A1-96E5-6248D1C09525}</Project>
       <Name>FourthCooking</Name>
