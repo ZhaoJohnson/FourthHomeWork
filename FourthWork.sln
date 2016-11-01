@@ -15,8 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FourthInterface", "FourthIn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FourthCooking", "FourthCooking\FourthCooking.csproj", "{BEE2BB41-A6E3-40A1-96E5-6248D1C09525}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FourthCookingFactory", "FourthCookingFactory\FourthCookingFactory.csproj", "{402EF276-2BCC-4771-9837-2A965F0E0C1B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,10 +45,6 @@ Global
 		{BEE2BB41-A6E3-40A1-96E5-6248D1C09525}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BEE2BB41-A6E3-40A1-96E5-6248D1C09525}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BEE2BB41-A6E3-40A1-96E5-6248D1C09525}.Release|Any CPU.Build.0 = Release|Any CPU
-		{402EF276-2BCC-4771-9837-2A965F0E0C1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{402EF276-2BCC-4771-9837-2A965F0E0C1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{402EF276-2BCC-4771-9837-2A965F0E0C1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{402EF276-2BCC-4771-9837-2A965F0E0C1B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
