@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BEE2BB41-A6E3-40A1-96E5-6248D1C09525}</ProjectGuid>
+    <ProjectGuid>{E44E07E6-ED3A-42CA-B700-2E83EFEB1374}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FourthCooking</RootNamespace>
-    <AssemblyName>FourthCooking</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <RootNamespace>FourthWorkModel</RootNamespace>
+    <AssemblyName>FourthWorkModel</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -31,7 +31,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,28 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractFactory.cs" />
-    <Compile Include="CookingSimpleFactory.cs" />
-    <Compile Include="CookService.cs" />
-    <Compile Include="FireTempleCuisine.cs" />
-    <Compile Include="HideGardenCuisine.cs" />
-    <Compile Include="IBasicCookFactory.cs" />
+    <Compile Include="BasicModel.cs" />
+    <Compile Include="DetailFood\OverFryofFrog.cs" />
+    <Compile Include="DetailFood\ChairmanFavouriteofRoastMeat.cs" />
+    <Compile Include="DetailFood\HotPepperOfFishHead.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ThirdVictoryCuisine.cs" />
+    <Compile Include="SimpleFactory\PersonModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FourthCommon\FourthCommon.csproj">
-      <Project>{8199252b-014f-4d97-b9f3-75a4adbb2644}</Project>
-      <Name>FourthCommon</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FourthInterface\FourthInterface.csproj">
-      <Project>{D6C36830-C128-4B11-A0BD-69EEFC65C5ED}</Project>
-      <Name>FourthInterface</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FourthModel\FourthModel.csproj">
-      <Project>{3A2D6B63-A589-440A-B45D-9C01FCC311ED}</Project>
-      <Name>FourthModel</Name>
-    </ProjectReference>
+    <Folder Include="OrdinaryFactory\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
