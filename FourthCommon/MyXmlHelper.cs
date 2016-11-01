@@ -26,38 +26,48 @@ namespace FourthCommon
             return result;
         }
 
-        public static T Deserialize<T>(string XmlFilename)
-        {
-            string path = Path.Combine(TheBasePath, XmlFilename);
-            Type targetType = typeof(T);
-            if (string.IsNullOrEmpty(path) || !File.Exists(path)
-                || targetType == null)
-            {
-                return default(T);
-            }
-            object obj = null;
-            //if (File.Exists(path))
-            //{
-            //    Console.WriteLine("找不到文件");
-            //}
-            try
-            {
-                XmlSerializerFactory xmlSerializerFactory = new XmlSerializerFactory();
-                XmlSerializer xmlSerializer =
-                    xmlSerializerFactory.CreateSerializer(targetType, targetType.Name);
-                Stream stream = new FileStream(path, FileMode.Open);
-                obj = xmlSerializer.Deserialize(stream);
-                stream.Close();
-            }
-            catch
-            {
-            }
-            return (T)obj;
-        }
+        //public static T Deserialize<T>(string XmlFilename,string fatherPath=null)
+        //{
+        //    string path=TheBasePath;
+        //    if (!string.IsNullOrEmpty(fatherPath))
+        //    {
+        //        path = Path.Combine(path, fatherPath);
+        //    }
+        //    path = Path.Combine(path, XmlFilename);
+        //    Type targetType = typeof(T);
+        //    if (string.IsNullOrEmpty(path) || !File.Exists(path)
+        //        || targetType == null)
+        //    {
+        //        return default(T);
+        //    }
+        //    object obj = null;
+        //    //if (File.Exists(path))
+        //    //{
+        //    //    Console.WriteLine("找不到文件");
+        //    //}
+        //    try
+        //    {
+        //        XmlSerializerFactory xmlSerializerFactory = new XmlSerializerFactory();
+        //        XmlSerializer xmlSerializer =
+        //            xmlSerializerFactory.CreateSerializer(targetType, targetType.Name);
+        //        Stream stream = new FileStream(path, FileMode.Open);
+        //        obj = xmlSerializer.Deserialize(stream);
+        //        stream.Close();
+        //    }
+        //    catch
+        //    {
+        //    }
+        //    return (T)obj;
+        //}
 
-        public static T DeserializeXMLFileToObject<T>(string XmlFilename)
+        public static T DeserializeXMLFileToObject<T>(string XmlFilename, string fatherPath = null)
         {
-            string path = Path.Combine(TheBasePath, XmlFilename);
+            string path = TheBasePath;
+            if (!string.IsNullOrEmpty(fatherPath))
+            {
+                path = Path.Combine(path, fatherPath);
+            }
+            path = Path.Combine(path, XmlFilename);
             T returnObject = default(T);
             if (string.IsNullOrEmpty(path)) return default(T);
 

@@ -8,6 +8,6 @@ namespace FourthInterface
 {
     public interface IOrder
     {
-        void Order();
+        List<Action> Order();
     }
 }

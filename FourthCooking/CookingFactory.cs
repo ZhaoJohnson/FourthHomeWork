@@ -6,6 +6,7 @@ using FourthModel.FoodModel;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -33,15 +34,14 @@ namespace FourthCooking
             }
         }
 
-        public static BasicCuisine ConfigCookingFood()
+        public static BasicCuisine ConfigCookingFood(string setting)
         {
-            AppSettingsReader configRead = new AppSettingsReader();
-            var settingconfig = configRead.GetValue("SettingXml", typeof(string));
-            var Mysetting = MyXmlHelper.Deserialize<SettingModel>(settingconfig.ToString());
-            string objectName = Mysetting.Cuisine + "CuisineModel";
-            Assembly assembly = Assembly.Load(objectName);
-            Type type = assembly.GetType();
-            return (BasicCuisine)Activator.CreateInstance(type);
+            var mysetting = MyXmlHelper.DeserializeXMLFileToObject<SettingModel>(setting, "XmlSetting");
+            string objectName = mysetting.Cuisine + "CuisineModel";
+            Assembly assembly = Assembly.Load(mysetting.Name);
+            var cust = assembly.GetExportedTypes().First(p => p.Name == objectName);
+            if(cust==null)throw new Exception("无法找到对应菜系");
+            return (BasicCuisine)Activator.CreateInstance(cust);
         }
     }
 }
