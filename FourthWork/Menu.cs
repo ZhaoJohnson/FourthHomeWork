@@ -22,8 +22,8 @@ namespace FourthWork
         public static void StarMenu()
         {
             Console.WriteLine("程序进行加载中请稍后………………………………");
-                        CustomerService cService = new CustomerService();
-                        
+            CustomerService cService = new CustomerService();
+
             do
             {
                 Console.WriteLine("欢迎使用xx系统");

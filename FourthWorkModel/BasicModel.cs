@@ -37,18 +37,18 @@ namespace FourthWorkModel
         /// 制作方式
         /// </summary>
         public string FoodCooking { get; set; }
-        
     }
 
     public abstract class WorkingModel
     {
         public abstract void Cooking();
+
         public abstract void Tasting();
+
         public abstract void Scoring();
     }
 
-
-    public abstract class GeneralFoodModel 
+    public abstract class GeneralFoodModel
     {
         /// <summary>
         /// 菜品Id
@@ -79,10 +79,12 @@ namespace FourthWorkModel
         /// 制作方式
         /// </summary>
         public string FoodCooking { get; set; }
-        public abstract void Cooking();
-        public abstract void Tasting();
-        public abstract void Scoring();
 
+        public abstract void Cooking();
+
+        public abstract void Tasting();
+
+        public abstract void Scoring();
     }
 
     public abstract class OrderModel
@@ -92,8 +94,8 @@ namespace FourthWorkModel
 
     public enum FoodType
     {
-        ChairmanFavouriteofRoastMeat=1,
-        HotPepperOfFishHead=2,
-        OverFryofFrog=3
+        ChairmanFavouriteofRoastMeat = 1,
+        HotPepperOfFishHead = 2,
+        OverFryofFrog = 3
     }
 }

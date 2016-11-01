@@ -40,16 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractFactory\FoodAbstractFactoryModel.cs" />
     <Compile Include="BasicModel.cs" />
     <Compile Include="DetailFood\OverFryofFrog.cs" />
     <Compile Include="DetailFood\ChairmanFavouriteofRoastMeat.cs" />
     <Compile Include="DetailFood\HotPepperOfFishHead.cs" />
+    <Compile Include="OrdinaryFactory\FoodCookingFactory.cs" />
+    <Compile Include="OrdinaryFactory\FoodsModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleFactory\PersonModel.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="OrdinaryFactory\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
